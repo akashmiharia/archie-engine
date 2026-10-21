@@ -1,0 +1,4 @@
+{
+  "_description": "Canonical entity names + aliases. Check before creating a new entity page. Prevents duplicates. Each entry: canonical (string), aliases (list), article (wiki path or null for alias-only entries).",
+  "entities": []
+}

@@ -1,0 +1,26 @@
+# Tier 1 protected paths — Claude must confirm with user before writing.
+# One glob pattern per line. Lines starting with # are comments.
+# Patterns starting with ! are exceptions (allow-list overrides).
+# Patterns expand ~ to the user home directory.
+#
+# This file is itself protected (see hooks/* below) — edit manually or with
+# explicit user confirmation. Do not let a Claude session unilaterally rewrite.
+
+# Always-loaded universal config
+__CLAUDE_DIR__/AGENTS.md
+__CLAUDE_DIR__/CLAUDE.md
+__CLAUDE_DIR__/rules/*.md
+
+# Knowledge layer foundation (wiki SCHEMA — the rules of the wiki itself)
+__CLAUDE_DIR__/knowledge/SCHEMA.md
+
+# Auto-memory (everything in here shapes Claude's identity model of the user)
+__MEMDIR__/MEMORY.md
+__MEMDIR__/*.md
+
+
+# Hook system itself — recursion protection. Don't let a session disable enforcement.
+__CLAUDE_DIR__/hooks/*
+__CLAUDE_DIR__/settings.json
+__CLAUDE_DIR__/settings.local.json
+__CLAUDE_DIR__/engine.conf
